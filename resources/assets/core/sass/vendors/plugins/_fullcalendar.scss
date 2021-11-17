@@ -1,0 +1,213 @@
+//
+// Fullcalendar
+//
+
+.fc {
+    // Border color
+    --fc-border-color: #{$border-color};
+    --fc-page-bg-color: #{$white};
+    --fc-small-font-size: 0.95rem;
+
+    // General
+    --fc-highlight-color: #{$primary-light};
+    //--fc-non-business-color: 
+    //--fc-bg-event-color:
+    --fc-bg-event-opacity: 0.3;
+    --fc-neutral-bg-color: #{$light};
+    //--fc-event-selected-overlay-color: 
+    --fc-event-border-color: #{$primary};
+    --fc-event-bg-color: #{$primary};
+    --fc-event-text-color: #{$primary-light};
+    --fc-today-bg-color: #{$warning-light};
+    //--fc-neutral-bg-color:
+    //--fc-neutral-text-color:
+    //--fc-more-link-text-color:
+    //--fc-more-link-bg-color:
+    --fc-now-indicator-color: #{$danger};
+    --fc-list-event-hover-bg-color: #{$lighten};
+
+    // Buttons
+    --fc-button-text-color: #{$gray-600};
+    --fc-button-bg-color: #{$light};
+    --fc-button-border-color: #{$light};
+    
+    --fc-button-hover-bg-color:  #{$light};
+    --fc-button-hover-border-color:  #{$light};
+
+    --fc-button-active-bg-color: #{$primary};
+    --fc-button-active-border-color: #{$primary};
+
+    // Button
+    .fc-button { 
+        padding: 0.65rem 1rem;
+        box-shadow: none !important;
+        border: 0 !important;
+        border-radius: $btn-border-radius;
+    }
+
+    // Primary button
+    .fc-button-primary {
+        // Icon
+        .fc-icon {
+            font-size: 1.25rem;
+        }
+
+        &:not(:disabled):active,
+        &:not(:disabled):focus,        
+        &:not(:disabled):hover {
+            color: $primary;
+
+            .fc-icon {
+                color: $primary;
+            }
+        }
+        
+        &:not(:disabled).fc-button-active {
+            color: $primary-inverse;
+
+            .fc-icon {
+                color: $primary-inverse;
+            }
+        }
+    }
+
+    // Toolbar title
+    .fc-toolbar-title {
+        font-size: 1.5rem;
+        font-weight: $font-weight-bolder;
+        color: $gray-800;
+    }
+
+    // Header cell
+    .fc-col-header-cell {
+        padding: 0.75rem 0.5rem;
+
+        .fc-col-header-cell-cushion  {            
+            font-size: 1.1rem;
+            font-weight: $font-weight-bold;
+            color: $gray-800;
+        }
+    }    
+
+    // Border radius
+    .fc-scrollgrid {
+        @include border-radius($border-radius);
+
+        tbody > tr:last-child {
+            td:first-child {
+                @include border-bottom-start-radius($border-radius);
+            }
+
+            td:last-child {
+                @include border-bottom-end-radius($border-radius);
+            }
+        }
+    }
+
+    // Event
+    .fc-daygrid-event {
+        margin-top: 3px;
+    }
+
+    // Event title
+    .fc-daygrid-dot-event,
+    .fc-daygrid-block-event {
+        .fc-event-title,
+        .fc-event-time {
+            padding: 0.25rem 0.25rem;
+        }
+    }
+
+    // Dot event
+    .fc-daygrid-dot-event {
+        background-color: $light;
+        color: $gray-600;
+
+        &:hover,
+        &.fc-event-mirror {
+            background-color: $light;
+            color: $primary;
+        }
+    }
+
+    // Event dot
+    .fc-daygrid-event-dot {
+        margin-left: 0.5rem;
+        margin-right: 0.1rem;
+    }        
+
+    // Popover
+    .fc-popover {
+        box-shadow: $dropdown-box-shadow;
+        @include border-radius($dropdown-border-radius);
+
+        .fc-popover-header {
+            @include border-top-radius($dropdown-border-radius);
+            padding: 0.65rem 0.75rem;
+            
+            .fc-popover-title {
+                color: $gray-800;
+                font-size: 1rem;
+                font-weight: $font-weight-bold;
+            }
+
+            .fc-popover-close {
+                font-size: 1rem;
+                color: $gray-600;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+
+        .fc-popover-body  {
+            padding: 0.5rem 0.75rem 0.75rem 0.75rem;
+        }
+    }
+
+    // More link
+    .fc-daygrid-more-link {
+        font-weight: $font-weight-bold;
+    }
+
+    // Slot
+    .fc-timegrid-slot {
+        height: 2rem;
+        font-size: 0.95rem;
+    }
+
+    // List
+    .fc-list-day-cushion, 
+    .fc-list-table td {
+        padding: 0.85rem 1.15rem;
+    }
+
+    .fc-list-day-text,
+    .fc-list-day-side-text {
+        font-size: 1.1rem;
+        color: $gray-900;
+        font-weight: $font-weight-bolder;
+    }
+
+    .fc-list,
+    .fc-scroller,
+    .fc-list-table {
+        @include border-radius($border-radius);
+    }
+
+    .fc-list {
+        overflow: hidden;
+        position: relative;
+    }
+
+    // Week
+    .fc-timegrid-axis {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .fc-timegrid-event .fc-event-main {
+        padding: 0.25rem 0.25rem;
+    }
+}
